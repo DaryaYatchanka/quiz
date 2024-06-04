@@ -17,6 +17,7 @@ public class Answer {
     private UUID id;
     private String answerText;
     private Boolean isCorrect;
+
     private String answerFeedback;
 
     @OneToOne
@@ -69,6 +70,7 @@ public class Answer {
         return answerText;
     }
 
+
     public void setScore(Integer score) {
         this.score = score;
     }
@@ -76,5 +78,6 @@ public class Answer {
     public Integer getScore() {
         return score;
     }
+
 
 }

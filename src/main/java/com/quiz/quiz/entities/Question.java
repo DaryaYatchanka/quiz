@@ -2,6 +2,7 @@ package com.quiz.quiz.entities;
 
 import jakarta.persistence.*;
 
+
 import java.util.ArrayList;
 
 import jakarta.persistence.Entity;
@@ -9,7 +10,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import java.util.UUID;
 
 @Entity
 public class Question {
@@ -18,6 +18,11 @@ public class Question {
     @GeneratedValue(strategy= GenerationType.AUTO)
         private Long id;
         private String questionText;
+
+        @OneToOne
+        private Category category;
+        @OneToMany
+        private ArrayList<Answer> answerOptions;
 
         private String subject;
 
@@ -41,6 +46,15 @@ public class Question {
 //    public void setAnswerOptions(ArrayList<Answer> answerOptions) {
 //        this.answerOptions = answerOptions;
 //    }
+
+
+    public ArrayList<Answer> getAnswerOptions() {
+        return answerOptions;
+    }
+
+    public void setAnswerOptions(ArrayList<Answer> answerOptions) {
+        this.answerOptions = answerOptions;
+    }
 
 
     public String getQuestionText() {
@@ -67,6 +81,14 @@ public class Question {
 
     public String getQuestionType() {
         return questionType;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 
 }
