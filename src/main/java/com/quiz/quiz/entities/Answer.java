@@ -1,6 +1,11 @@
 package com.quiz.quiz.entities;
-
 import jakarta.persistence.*;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 
 import java.util.UUID;
 
@@ -16,6 +21,7 @@ public class Answer {
 
     @OneToOne
     private Integer score;
+
 
     public Answer(){}
 
@@ -70,4 +76,5 @@ public class Answer {
     public Integer getScore() {
         return score;
     }
+
 }

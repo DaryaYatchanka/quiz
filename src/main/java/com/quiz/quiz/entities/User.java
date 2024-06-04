@@ -1,6 +1,11 @@
 package com.quiz.quiz.entities;
 
 import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 
 import java.util.UUID;
 
@@ -15,8 +20,10 @@ public class User {
     private String password;
     private String email;
 
+
     @OneToMany
     private Integer score;
+
 
     public User(){}
 
@@ -75,6 +82,7 @@ public class User {
         return password;
     }
 
+
     public Integer getScore() {
         return score;
     }
@@ -82,4 +90,5 @@ public class User {
     public void setScore(Integer score) {
         this.score = score;
     }
+
 }
