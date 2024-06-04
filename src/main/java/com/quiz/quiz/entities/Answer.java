@@ -14,6 +14,7 @@ public class Answer {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private UUID id;
     private Boolean isCorrect;
+    private String answerText;
     private String answerFeedback;
 
     public Answer(){}
@@ -52,5 +53,13 @@ public class Answer {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public void setAnswerText(String answerText) {
+        this.answerText = answerText;
+    }
+
+    public String getAnswerText() {
+        return answerText;
     }
 }

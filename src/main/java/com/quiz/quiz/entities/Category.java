@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import java.util.UUID;
 
 @Entity
-public class Categories {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,20 +17,20 @@ public class Categories {
     private String subTopic;
     private Integer level;
 
-    public Categories(){}
+    public Category(){}
 
-    public Categories(UUID id, String subject){
+    public Category(UUID id, String subject){
         this.id= id;
         this.subject = subject;
     }
 
-    public Categories(UUID id, String subject, String subTopic){
+    public Category(UUID id, String subject, String subTopic){
         this.id = id;
         this.subject = subject;
         this.subTopic = subTopic;
     }
 
-    public Categories(UUID id, String subject, String subTopic, Integer level){
+    public Category(UUID id, String subject, String subTopic, Integer level){
         this.id = id;
         this.subject = subject;
         this.subTopic = subTopic;

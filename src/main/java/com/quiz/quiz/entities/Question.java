@@ -1,10 +1,8 @@
 package com.quiz.quiz.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 @Entity
@@ -14,7 +12,10 @@ public class Question {
     @GeneratedValue(strategy= GenerationType.AUTO)
         private UUID id;
         private String questionText;
-        private String answerOptions;
+        @OneToOne
+        private Category category;
+        @OneToMany
+        private ArrayList<Answer> answerOptions;
 
     public void setId(UUID id) {
         this.id = id;
@@ -28,16 +29,24 @@ public class Question {
         this.questionText = questionText;
     }
 
-    public String getAnswerOptions() {
+    public ArrayList<Answer> getAnswerOptions() {
         return answerOptions;
     }
 
-    public void setAnswerOptions(String answerOptions) {
+    public void setAnswerOptions(ArrayList<Answer> answerOptions) {
         this.answerOptions = answerOptions;
     }
 
     public String getQuestionText() {
         return questionText;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 }
 
