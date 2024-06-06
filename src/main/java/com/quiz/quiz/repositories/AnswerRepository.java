@@ -19,4 +19,5 @@ public interface AnswerRepository extends JpaRepository<Answer, Id> {
 
     @Query(value = "SELECT * FROM answer WHERE isCorrect= true", nativeQuery = true)
     public Answer findByCorrectAnswer(Boolean isCorrect);
+
 }

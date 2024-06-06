@@ -1,5 +1,4 @@
 package com.quiz.quiz.repositories;
-
 import com.quiz.quiz.entities.Category;
 import com.quiz.quiz.entities.Question;
 import jakarta.persistence.Id;

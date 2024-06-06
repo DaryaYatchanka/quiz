@@ -18,4 +18,5 @@ public interface UserRepository {
     @Query(value = "SELECT * FROM user WHERE id=? AND Score=?", nativeQuery = true)
     public User findByIdAndScore(UUID Id, Integer score);
 
+
 }
