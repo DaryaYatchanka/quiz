@@ -4,8 +4,14 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 !mvnw
-!.mvn
-!mvnw.cmd
+.mvn
+mvnw.cmd
+.DS_Store
+.mvn/wrapper
+mvnw
+
+
+
 
 
 ### STS ###
