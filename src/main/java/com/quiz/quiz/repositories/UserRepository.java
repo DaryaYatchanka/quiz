@@ -15,4 +15,7 @@ public interface UserRepository {
     @Query(value = "SElECT * FROM user WHERE Id=?", nativeQuery = true)
     public User findById(UUID Id);
 
+    @Query(value = "SELECT * FROM user WHERE id=? AND Score=?", nativeQuery = true)
+    public User findByIdAndScore(UUID Id, Integer score);
+
 }
