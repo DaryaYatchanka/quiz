@@ -4,9 +4,10 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 !mvnw
-.mvn
+
 mvnw.cmd
 .DS_Store
+
 
 .application.properties
 src/main/resources/application.properties
@@ -17,6 +18,9 @@ src/main/resources/application.properties
 
 .mvn/wrapper
 mvnw
+=======
+
+
 
 
 
