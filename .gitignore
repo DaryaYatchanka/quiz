@@ -7,12 +7,17 @@ target/
 .mvn
 mvnw.cmd
 .DS_Store
+
 .application.properties
 src/main/resources/application.properties
 
 
 !.mvn
 !mvnw.cmd
+
+.mvn/wrapper
+mvnw
+
 
 
 
