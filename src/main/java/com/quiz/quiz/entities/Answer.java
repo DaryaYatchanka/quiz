@@ -1,9 +1,6 @@
 package com.quiz.quiz.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.UUID;
 
@@ -16,6 +13,9 @@ public class Answer {
     private Boolean isCorrect;
     private String answerText;
     private String answerFeedback;
+
+    @OneToOne
+    private Integer score;
 
     public Answer(){}
 
@@ -61,5 +61,13 @@ public class Answer {
 
     public String getAnswerText() {
         return answerText;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
+    }
+
+    public Integer getScore() {
+        return score;
     }
 }
