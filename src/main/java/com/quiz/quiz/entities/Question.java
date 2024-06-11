@@ -10,18 +10,24 @@ public class Question {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-        private UUID id;
+        private Long id;
         private String questionText;
-        @OneToOne
-        private Category category;
-        @OneToMany
-        private ArrayList<Answer> answerOptions;
 
-    public void setId(UUID id) {
+        private String subject;
+
+       private String questionType;
+
+    //        @OneToOne
+//        private Category category;
+
+//        @OneToMany
+//        private ArrayList<Answer> answerOptions;
+
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
@@ -29,24 +35,37 @@ public class Question {
         this.questionText = questionText;
     }
 
-    public ArrayList<Answer> getAnswerOptions() {
-        return answerOptions;
-    }
-
-    public void setAnswerOptions(ArrayList<Answer> answerOptions) {
-        this.answerOptions = answerOptions;
-    }
+//    public ArrayList<Answer> getAnswerOptions() {
+//        return answerOptions;
+//    }
+//
+//    public void setAnswerOptions(ArrayList<Answer> answerOptions) {
+//        this.answerOptions = answerOptions;
+//    }
 
     public String getQuestionText() {
         return questionText;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+//    public void setCategory(Category category) {
+//        this.category = category;
+//    }
+//
+//    public Category getCategory() {
+//        return category;
+//    }
+    public String getSubject(){return subject; }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
-    public Category getCategory() {
-        return category;
+    public void setQuestionType(String questionType) {
+        this.questionType = questionType;
+    }
+
+    public String getQuestionType() {
+        return questionType;
     }
 }
 
