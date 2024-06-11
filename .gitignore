@@ -7,8 +7,9 @@ target/
 .mvn
 mvnw.cmd
 .DS_Store
-quiz/src/main/java/resources/application.properties
 .application.properties
+src/main/resources/application.properties
+
 
 .application.properties
 src/main/resources/application.properties
