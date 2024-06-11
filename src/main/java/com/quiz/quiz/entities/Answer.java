@@ -8,7 +8,7 @@ public class Answer {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private UUID id;
+    private Long id;
     private String answerText;
     private Boolean isCorrect;
 
@@ -20,19 +20,19 @@ public class Answer {
 
     public Answer(){}
 
-    public Answer(UUID id, Boolean isCorrect){
+    public Answer(Long id, Boolean isCorrect){
         this.id = id;
         this.isCorrect = isCorrect;
     }
 
-    public Answer(UUID id, Boolean isCorrect, String answerFeedback){
+    public Answer(Long id, Boolean isCorrect, String answerFeedback){
         this.id = id;
         this.isCorrect = isCorrect;
         this.answerFeedback = answerFeedback;
     }
 
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
@@ -52,7 +52,7 @@ public class Answer {
         isCorrect = correct;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
