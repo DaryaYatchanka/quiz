@@ -6,13 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.util.UUID;
 
 @Repository
 public interface AnswerRepository extends JpaRepository<Answer, Id> {
 
     @Query(value ="SELECT * FROM answer WHERE answerId=?", nativeQuery = true)
-    public Answer findById(UUID id);
+    public Answer findById(Long id);
 
     @Query(value= "SELECT * FROM answer WHERE answerText=?", nativeQuery = true)
     public Answer findByAnswerText(String answerText);

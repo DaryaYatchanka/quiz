@@ -4,7 +4,6 @@ import com.quiz.quiz.entities.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.util.UUID;
 
 @Repository
 public interface UserRepository {
@@ -13,9 +12,9 @@ public interface UserRepository {
     public User findByUsername(String username);
 
     @Query(value = "SElECT * FROM user WHERE Id=?", nativeQuery = true)
-    public User findById(UUID Id);
+    public User findById(Long Id);
 
     @Query(value = "SELECT * FROM user WHERE id=? AND Score=?", nativeQuery = true)
-    public User findByIdAndScore(UUID Id, Integer score);
+    public User findByIdAndScore(Long Id, Integer score);
 
 }
