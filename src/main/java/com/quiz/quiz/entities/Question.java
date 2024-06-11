@@ -19,11 +19,6 @@ public class Question {
         private Long id;
         private String questionText;
 
-        @OneToOne
-        private Category category;
-        @OneToMany
-        private ArrayList<Answer> answerOptions;
-
         private String subject;
 
        private String questionType;
@@ -39,6 +34,11 @@ public class Question {
     }
 
 
+    public Long getId() {
+        return id;
+    }
+
+
 //    public ArrayList<Answer> getAnswerOptions() {
 //        return answerOptions;
 //    }
@@ -48,13 +48,13 @@ public class Question {
 //    }
 
 
-    public ArrayList<Answer> getAnswerOptions() {
-        return answerOptions;
-    }
-
-    public void setAnswerOptions(ArrayList<Answer> answerOptions) {
-        this.answerOptions = answerOptions;
-    }
+//    public ArrayList<Answer> getAnswerOptions() {
+//        return answerOptions;
+//    }
+//
+//    public void setAnswerOptions(ArrayList<Answer> answerOptions) {
+//        this.answerOptions = answerOptions;
+//    }
 
 
     public String getQuestionText() {
@@ -75,6 +75,10 @@ public class Question {
         this.subject = subject;
     }
 
+//    public void setCategory(Category category) {
+//        this.category = category;
+//    }
+
     public void setQuestionType(String questionType) {
         this.questionType = questionType;
     }
@@ -82,14 +86,4 @@ public class Question {
     public String getQuestionType() {
         return questionType;
     }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
 }
-
