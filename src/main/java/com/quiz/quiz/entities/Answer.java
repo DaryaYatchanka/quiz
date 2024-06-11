@@ -10,8 +10,8 @@ public class Answer {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private UUID id;
-    private Boolean isCorrect;
     private String answerText;
+    private Boolean isCorrect;
     private String answerFeedback;
 
     @OneToOne
