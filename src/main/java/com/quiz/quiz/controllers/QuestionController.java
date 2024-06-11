@@ -18,9 +18,9 @@ public class QuestionController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @GetMapping("/questions/{id}")
-    public ResponseEntity<Question> getQuestion(@PathVariable UUID id){
-        return ResponseEntity.ok(new Question(1, "Question 1 text", new Category(58ed763-928c-4155-bee9-fdbaaadc15f3,"topic", "subtopic", 1), new Answer(123L, "answer text", true, "correct answwer should be this___ because of this")))
-    }
+//    @GetMapping("/questions/{id}")
+//    public ResponseEntity<Question> getQuestion(@PathVariable UUID id){
+//        return ResponseEntity.ok(new Question(1, "Question 1 text", new Category(58ed763-928c-4155-bee9-fdbaaadc15f3,"topic", "subtopic", 1), new Answer(123L, "answer text", true, "correct answwer should be this___ because of this")))
+//    }
 
 }
