@@ -12,36 +12,36 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
     private String subject;
     private String subTopic;
     private Integer level;
 
     public Category(){}
 
-    public Category(UUID id, String subject){
+    public Category(Long id, String subject){
         this.id= id;
         this.subject = subject;
     }
 
-    public Category(UUID id, String subject, String subTopic){
+    public Category(Long id, String subject, String subTopic){
         this.id = id;
         this.subject = subject;
         this.subTopic = subTopic;
     }
 
-    public Category(UUID id, String subject, String subTopic, Integer level){
+    public Category(Long id, String subject, String subTopic, Integer level){
         this.id = id;
         this.subject = subject;
         this.subTopic = subTopic;
         this.level = level;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
