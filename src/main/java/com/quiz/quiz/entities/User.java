@@ -25,8 +25,8 @@ public class User {
     private String email;
 
 
-    @OneToMany
-    private Integer score;
+//    @OneToMany
+//    private Score score;
 
 
 }
