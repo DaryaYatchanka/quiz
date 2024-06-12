@@ -1,5 +1,6 @@
 package com.quiz.quiz.entities;
 
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.persistence.*;
 
 
@@ -9,81 +10,42 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-
+@Builder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Question {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-        private Long id;
-        private String questionText;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @NotBlank
+    private String questionText;
+    //        @NotBlank
+//        private String subject;
+    @NotBlank
+    private String questionType;
 
-        private String subject;
+    @ManyToOne
+    private Category category;
 
-       private String questionType;
+    @NotBlank
+    @OneToMany
+    private ArrayList<Answer> answerOptions;
 
-    //        @OneToOne
-//        private Category category;
+//    @OneToOne
+//    private ArrayList<Answer> correctAnswers;
 
-//        @OneToMany
-//        private ArrayList<Answer> answerOptions;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-
-
-//    public ArrayList<Answer> getAnswerOptions() {
-//        return answerOptions;
-//    }
-//
-//    public void setAnswerOptions(ArrayList<Answer> answerOptions) {
-//        this.answerOptions = answerOptions;
-//    }
+    @NotBlank
+    @ElementCollection
+    private ArrayList<String> correctAnswers;
 
 
-//    public ArrayList<Answer> getAnswerOptions() {
-//        return answerOptions;
-//    }
-//
-//    public void setAnswerOptions(ArrayList<Answer> answerOptions) {
-//        this.answerOptions = answerOptions;
-//    }
-
-
-    public String getQuestionText() {
-        return questionText;
-    }
-
-
-//    public void setCategory(Category category) {
-//        this.category = category;
-//    }
-//
-//    public Category getCategory() {
-//        return category;
-//    }
-    public String getSubject(){return subject; }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-//    public void setCategory(Category category) {
-//        this.category = category;
-//    }
-
-    public void setQuestionType(String questionType) {
-        this.questionType = questionType;
-    }
-
-    public String getQuestionType() {
-        return questionType;
-    }
 }
