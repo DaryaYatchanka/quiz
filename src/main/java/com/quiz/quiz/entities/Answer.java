@@ -18,8 +18,8 @@ public class Answer {
 
     private String answerFeedback;
 
-    @OneToOne
-    private Integer score;
+//    @OneToOne
+//    private Integer score;
 
 
 }

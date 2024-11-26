@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,12 +27,34 @@ public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotBlank
+    private String question;
+    @NotBlank
+    private String subject;
+    @NotBlank
+    private String questionType;
+
+
+    @ElementCollection
+    private List<String> choices;
+
+
+    @ElementCollection
+    private List<String> correctAnswers;
+
+
+
+
     @NotBlank
     private String questionText;
     //        @NotBlank
 //        private String subject;
-    @NotBlank
-    private String questionType;
+//    @NotBlank
+//    private String questionType;
+//
+//    @NotBlank
+//    private ArrayList<String> subject;
 
     @ManyToOne
     private Category category;
@@ -43,9 +66,9 @@ public class Question {
 //    @OneToOne
 //    private ArrayList<Answer> correctAnswers;
 
-    @NotBlank
-    @ElementCollection
-    private ArrayList<String> correctAnswers;
+//    @NotBlank
+//    @ElementCollection
+//    private ArrayList<String> correctAnswers;
 
 
 }
