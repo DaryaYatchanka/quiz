@@ -23,12 +23,12 @@ public interface QuestionRepository extends JpaRepository<Question, Long> {
 //    @Query("SELECT DISTINCT q.subject FROM Question q")
 //    List<Category> findUniqueCategory;
 
-
+//
 //    @Query(value = "SELECT * FROM question WHERE questionId=?", nativeQuery = true)
 //    public Question findById(Long id);
 
-//    @Query(value="SELECT * FROM question WHERE questionCategory=?", nativeQuery = true)
-//    public Question findByCategory(Category category);
-//
-//    List<Category> findDistinctCategory(Category category);
+    @Query(value="SELECT * FROM question WHERE questionCategory=?", nativeQuery = true)
+    public Question findByCategory(Category category);
+
+    List<Category> findDistinctCategory(Category category);
 }
