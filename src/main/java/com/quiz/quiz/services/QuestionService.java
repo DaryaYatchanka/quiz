@@ -110,14 +110,14 @@ public class QuestionService {
 
     }
 
-//    public void deleteQuestion(Long id) {
-//        questionRepository.deleteById(id);
-//    }
-//
-//    public List<Question> getQuestionsForUser(Integer numOfQuestions, String subject) {
-//        Pageable pageable = PageRequest.of(0, numOfQuestions);
-//        return questionRepository.findBySubject(subject, pageable).getContent();
-//    }
+    public void deleteQuestion(Long id) {
+        questionRepository.deleteById(id);
+    }
+
+    public List<Question> getQuestionsForUser(Integer numOfQuestions, String subject) {
+        Pageable pageable = PageRequest.of(0, numOfQuestions);
+        return questionRepository.findBySubject(subject, pageable).getContent();
+    }
 
 
 }
