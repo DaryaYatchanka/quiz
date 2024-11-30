@@ -14,21 +14,23 @@ import java.util.List;
 
 @Repository
 public interface QuestionRepository extends JpaRepository<Question, Long> {
+    //needs work
+
 //    Page<Question> findbyCategory(Category category, Pageable pageable);
-
-    @Query("SELECT DISTINCT q.subject FROM Question q")
-    List<String> findDistinctSubject();
-    Page<Question> findBySubject(String subject, Pageable pageable);
-
-//    @Query("SELECT DISTINCT q.subject FROM Question q")
-//    List<Category> findUniqueCategory;
-
 //
-//    @Query(value = "SELECT * FROM question WHERE questionId=?", nativeQuery = true)
-//    public Question findById(Long id);
-
-    @Query(value="SELECT * FROM question WHERE questionCategory=?", nativeQuery = true)
-    public Question findByCategory(Category category);
-
-    List<Category> findDistinctCategory(Category category);
+//    @Query("SELECT DISTINCT q.subject FROM Question q")
+//    List<String> findDistinctSubject();
+//    Page<Question> findBySubject(String subject, Pageable pageable);
+//
+////    @Query("SELECT DISTINCT q.subject FROM Question q")
+////    List<Category> findUniqueCategory;
+//
+////
+////    @Query(value = "SELECT * FROM question WHERE questionId=?", nativeQuery = true)
+////    public Question findById(Long id);
+//
+//    @Query(value="SELECT * FROM question WHERE questionCategory=?", nativeQuery = true)
+//    public Question findByCategory(Category category);
+//
+//    List<Category> findDistinctCategory(Category category);
 }
