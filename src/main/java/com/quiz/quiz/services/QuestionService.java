@@ -90,10 +90,10 @@ public class QuestionService {
     public Optional<Question> getQuestionById(Long id) {
         return questionRepository.findById(id);
     }
-
-    public List<String> getAllSubjects() {
-        return questionRepository.findDistinctSubject();
-    }
+//
+//    public List<String> getAllSubjects() {
+//        return questionRepository.findDistinctSubject();
+//    }
 
 
     public Question updateQuestion(Long id, Question question) throws ChangeSetPersister.NotFoundException {
@@ -114,10 +114,10 @@ public class QuestionService {
         questionRepository.deleteById(id);
     }
 
-    public List<Question> getQuestionsForUser(Integer numOfQuestions, String subject) {
-        Pageable pageable = PageRequest.of(0, numOfQuestions);
-        return questionRepository.findBySubject(subject, pageable).getContent();
-    }
+//    public List<Question> getQuestionsForUser(Integer numOfQuestions, String subject) {
+//        Pageable pageable = PageRequest.of(0, numOfQuestions);
+//        return questionRepository.findBySubject(subject, pageable).getContent();
+//    }
 
 
 }

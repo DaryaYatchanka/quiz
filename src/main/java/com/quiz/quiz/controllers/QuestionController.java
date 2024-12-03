@@ -54,12 +54,12 @@ public class QuestionController {
         Question updatedQuestion = questionService.updateQuestion(id, question);
         return ResponseEntity.ok(updatedQuestion);
     }
-//
-//    @DeleteMapping("/question/{id}/delete")
-//    public ResponseEntity<Void> deleteQuestion(@PathVariable Long id){
-//        questionService.deleteQuestion(id);
-//        return ResponseEntity.noContent().build();
-//    }
+
+    @DeleteMapping("/question/{id}/delete")
+    public ResponseEntity<Void> deleteQuestion(@PathVariable Long id){
+        questionService.deleteQuestion(id);
+        return ResponseEntity.noContent().build();
+    }
 //    @GetMapping("/subjects")
 //    public ResponseEntity<List<String>> getAllSubjects(){
 //        List<String> subjects = questionService.getAllSubjects();
